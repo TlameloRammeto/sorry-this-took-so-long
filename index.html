@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  
+  <!-- Mobile + responsive support -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Handwritten font -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <title>Just For You</title>
+</head>
+
+<body>
+
+<!-- OPEN ME -->
+<div class="screen bg-lily" id="openScreen">
+  <img src="envelope.png" class="envelope" onclick="openLetter()">
+  <p class="open-text">Tickle me, it’s a surprise! </p>
+</div>
+
+<!-- QUESTION -->
+<div class="screen bg-pink hidden" id="questionScreen">
+  <div class="card">
+    <h1>Kea, Amore mio 💕</h1>
+    <img src="cat.png" class="cat">
+    <p class="question-text">Will you be my Valentine?</p>
+
+    <div class="buttons">
+      <button onclick="justYes()">YES.</button>
+      <button onclick="definitelyYes()">MOST DEFINITELY YES!</button>
+    </div>
+  </div>
+</div>
+
+<!-- JUDGING CAT -->
+<div class="screen bg-angry hidden" id="judgeScreen">
+  <img src="cat_judge.png" class="cat judge-cat">
+  <p class="judge-text">
+    Just yes? 😐  
+    <br>
+    Be serious.
+  </p>
+  <button onclick="backToQuestion()">Try again</button>
+</div>
+
+<!-- VIDEO -->
+<div class="screen video-screen hidden" id="videoScreen">
+  <video src="kisscat.mp4" autoplay muted loop></video>
+  <button class="overlay-btn" onclick="showFinal()">
+    Come hereee 💕
+  </button>
+</div>
+
+<!-- FINAL LETTER -->
+<div class="screen bg-red hidden" id="finalScreen">
+<div class="letter">
+  <p class="letter-text">
+    Just because you’re my girlfriend doesn’t mean I won’t ask...  
+    choosing you is something I’ll always do on purpose.
+    <br><br>
+    Looking forward to spending more valentines with you.
+  </p>
+
+  <p class="signature">
+    I love you, Amore mio 💕
+  </p>
+</div>
+
+</div>
+
+<div id="sparkles"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
