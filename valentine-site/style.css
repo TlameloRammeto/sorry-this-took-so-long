@@ -1,0 +1,290 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background-color: #ffe6f0; /* soft pink base */
+  font-family: Arial, sans-serif;
+}
+
+/* Cute border frame for all screens */
+.screen::before {
+  content: "";
+  position: absolute;
+  inset: 20px;
+  border: 4px dashed rgba(255,105,180,0.6);
+  border-radius: 25px;
+  pointer-events: none;
+}
+
+.screen::after {
+  content: "♡  ♡  ♡";
+  position: absolute;
+  top: 40px;
+  right: 60px;
+  font-size: 28px;
+  opacity: 0.25;
+}
+
+
+/* Screens */
+.screen {
+  position: fixed;
+  inset: 0;
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 1.2s ease;
+  padding: 40px;       
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Background images – RESPONSIVE */
+.bg-lily {
+  background-image: url("lilybackground.png");
+}
+
+.bg-pink {
+  background-image: url("pinkheartsbackground.png");
+}
+
+.bg-angry {
+  background-image: url("angrycatsbackground.png");
+}
+
+.bg-red {
+  background-image: url("redheartsbackground.png");
+}
+
+/* Apply to ALL background screens */
+.bg-lily,
+.bg-pink,
+.bg-angry,
+.bg-red {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Elements */
+.envelope {
+  width: 220px;
+  cursor: pointer;
+  animation: float 3s ease-in-out infinite;
+}
+
+.envelope:hover {
+  transform: rotateX(15deg) scale(1.05);
+}
+
+
+.title {
+  font-family: 'Dancing Script', cursive;
+  font-size: 42px;
+  margin-bottom: 10px;
+  color: #ff4d88;
+}
+
+.open-text {
+  font-size: 20px;
+  margin-top: 15px;
+}
+
+.cat {
+  width: 180px;
+  margin: 15px 0;
+}
+
+.judge-cat {
+  width: 280px;
+  max-width: 80vw;
+}
+
+button {
+  background: hotpink;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-size: 16px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: deeppink;
+  transform: translateY(-3px);
+  transition: 0.3s;
+}
+
+/* Video */
+.video-screen video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay-btn {
+  position: absolute;
+  bottom: 40px;
+  background: rgba(255,105,180,0.9);
+}
+
+/* Letter */
+.letter {
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      #fff6e5,
+      #fff6e5 28px,
+      #e6c7a2 29px
+    );
+  padding: 50px;
+  border-radius: 10px;
+  max-width: 520px;
+  font-family: 'Dancing Script', cursive;
+  font-size: 24px;
+  line-height: 30px;
+  position: relative;
+  box-shadow:
+    inset 0 0 30px rgba(139,69,19,0.4),
+    0 25px 40px rgba(0,0,0,0.25);
+}
+
+.letter-text {
+  color: #5a2a2a;
+}
+
+.serious-line {
+  color: black;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+/* Burnt edges effect */
+.letter::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, transparent 50%, rgba(0,0,0,0.15));
+  border-bottom-right-radius: 10px;
+}
+
+.letter::after {
+  content: "xoxo  ♡  ♡  ♡  xoxo";
+  position: absolute;
+  bottom: 15px;
+  right: 25px;
+  font-size: 20px;
+  opacity: 0.4;
+}
+
+.card {
+  background: rgba(255, 240, 245, 0.97);
+  padding: 35px;
+  border-radius: 30px;
+  text-align: center;
+  max-width: 360px;
+  position: relative;
+  animation: floatCard 4s ease-in-out infinite;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+  max-height: calc(100vh - 140px);
+  overflow: auto;
+}
+
+/* Glow border */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: -5px;
+  border-radius: 35px;
+  background: linear-gradient(45deg, hotpink, pink, hotpink);
+  opacity: 0.4;
+  z-index: -1;
+}
+
+/* Floating animation */
+@keyframes floatCard {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.question-text {
+  font-size: 24px;
+  margin: 15px 0;
+  font-family: 'Dancing Script', cursive;
+}
+
+.sparkle {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: radial-gradient(circle, #fff, hotpink);
+  border-radius: 50%;
+  animation: sparkle 1s ease-out forwards;
+}
+
+.card h1,
+.question-text {
+  color: rgb(8, 2, 2);
+  text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+.letter-text {
+  color: #5a2a2a;
+}
+
+.serious-line {
+  color: black;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.signature {
+  margin-top: 20px;
+}
+
+.card,
+.letter,
+.envelope {
+  max-width: 420px;
+  width: 100%;
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1.2s ease;
+}
+
+@keyframes sparkle {
+  from {
+    transform: scale(0);
+    opacity: 1;
+  }
+  to {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+/* Animations */
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
